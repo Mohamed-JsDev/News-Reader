@@ -38,7 +38,7 @@ function Header() {
   };
   return (
     <>
-      <header className="sm:px-2 pb-4  max-sm:h-26 lg:block  w-screen fixed top-0 z-10  flex flex-col bg-[var(--primary-color)] text-white ">
+      <header className="sm:px-2 pb-4  max-sm:h-26 lg:block  w-screen fixed top-0 z-12  flex flex-col bg-[var(--primary-color)] text-white ">
         <div className=" sm:text-center flex md:justify-center flex-row items-center p-2 ">
           <h1
             className=" p-2 me-2 mt-4 sm:text-xl lg:text-4xl cursor-pointer shadow-amber-50 shadow-md "
@@ -72,8 +72,8 @@ function Header() {
         </div>
       </header>
       {showResults && results.length > 0 ? (
-        <div className=" p-10 absolute  top-26 bottom-20 z-10 left-0 right-0    max-sm:w-screen   bg-black   text-white ">
-          <div className="sm:ms-20 lg:ms-80 w-1/2    z-10">
+        <div className=" p-10 absolute top-26 bottom-20 z-10 left-0 right-0    max-sm:w-screen   bg-black   text-white ">
+          <div className="sm:ms-20 lg:ms-80 w-1/2   z-10">
             <h2 className="flex justify-between items-center max-sm:w-60 w-auto h-12 px-6 bg-white text-2xl text-black rounded-lg shadow-md">
               <span className="flex-grow text-center font-bold">{word}</span>
               <button
@@ -84,7 +84,7 @@ function Header() {
               </button>
             </h2>
           </div>
-          <div className=" w-screen    text-white p-8  absolute  top-20 bottom-20 z-5 left-0 grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+          <div className=" w-screen  bg-black   text-white p-8  absolute  top-24 bottom-20 z-5 left-0 grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
             {results.map((result, index) => (
               <Article
                 key={index}

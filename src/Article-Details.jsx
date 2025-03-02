@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { FetchArticles } from "./RTK/ArticlesSlice";
 import NotFound from "./components/NotFound";
+import ImageComponent from "./components/ImageComponent";
 
 function ArticleDetails() {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function ArticleDetails() {
       key={article.title}
       className="bg-white text-black rounded-2xl shadow-lg p-6 mt-20   "
     >
-      <img
+      <ImageComponent
         className="rounded-2xl  w-4xl h-126 object-cover  mb-4"
         src={article.urlToImage}
         alt={article.title || "Article Image"}

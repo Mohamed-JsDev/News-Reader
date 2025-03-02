@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
 import { removeArticle } from "./RTK/saveSlice";
 import NotFound from "./components/NotFound";
+import ImageComponent from "./components/ImageComponent";
 
 function ArticleSaved() {
   const ArticlesSaved = useSelector((state) => state.savedArticles);
@@ -20,11 +21,12 @@ function ArticleSaved() {
               key={article.title}
               className="bg-white text-black rounded-2xl mb-4 p-4 shadow-lg text-start hover:shadow-3xl"
             >
-              <img
+              <ImageComponent
                 className="rounded-2xl mb-3 h-48 w-full object-cover"
                 src={article.urlToImage}
                 alt={article.title || "Article Image"}
               />
+
               <h3 className="text-xl font-bold mb-2">
                 {article.title || "No Title Available"}
               </h3>

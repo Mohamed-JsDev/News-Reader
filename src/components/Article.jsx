@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router";
+import ImageComponent from "./ImageComponent";
 
 /* eslint-disable react/prop-types */
 function Article({ article, onSave, isFeatured }) {
@@ -15,11 +16,12 @@ function Article({ article, onSave, isFeatured }) {
           : ""
       }`}
     >
-      <img
+      <ImageComponent
         className="rounded-2xl w-full"
         src={article.urlToImage}
         alt={article.title || "Article Image"}
       />
+
       <h3 className="text-xl xl:text-lg font-bold mb-4">
         {article.title || "No Title Available"}
       </h3>

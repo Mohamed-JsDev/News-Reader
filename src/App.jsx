@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="container  overflow-hidden relative">
+    <div className=" overflow-hidden relative ">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
