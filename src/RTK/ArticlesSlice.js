@@ -5,7 +5,6 @@ export const FetchArticles = createAsyncThunk(
   async () => {
     const res = await fetch(
       "https://newsapi.org/v2/everything?q=news&apiKey=219b2028a41f4abcbf966d17964490d4"
-      // "https://newsapi.org/v2/everything?q=apple&from=2025-01-31&to=2025-01-31&sortBy=popularity&apiKey=219b2028a41f4abcbf966d17964490d4"
     );
     const data = await res.json();
     return data;
