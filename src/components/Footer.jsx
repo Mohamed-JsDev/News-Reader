@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className="w-screen bg-black text-white relative bottom-0 py-10 text-center mt-6">
-      footer
+    <footer className="w-screen text-2xl bg-black text-center text-white py-10  mt-6">
+      Made By Mohamed Alshafe &copy;2025
     </footer>
   );
 }

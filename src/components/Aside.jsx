@@ -25,7 +25,7 @@ function Aside() {
         }
       }
     }, 50);
-    return () => clearInterval(scrollInterval); // تنظيف المؤقت عند إلغاء المكون
+    return () => clearInterval(scrollInterval);
   }, []);
   return (
     <aside

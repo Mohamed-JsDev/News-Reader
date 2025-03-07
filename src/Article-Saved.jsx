@@ -18,12 +18,12 @@ function ArticleSaved() {
         ) : (
           ArticlesSaved.map((article) => (
             <article
-              key={article.title}
+              key={article.id}
               className="bg-white text-black rounded-2xl mb-4 p-4 shadow-lg text-start hover:shadow-3xl"
             >
               <ImageComponent
                 className="rounded-2xl mb-3 h-48 w-full object-cover"
-                src={article.urlToImage}
+                src={article.media_url}
                 alt={article.title || "Article Image"}
               />
 
@@ -31,12 +31,11 @@ function ArticleSaved() {
                 {article.title || "No Title Available"}
               </h3>
               <span className="text-gray-500 mb-2">
-                Published at:{" "}
-                {new Date(article.publishedAt).toLocaleDateString()}
+                Published at: {new Date(article.pub_date).toLocaleDateString()}
               </span>
               <div className="mt-4 flex justify-between">
                 <Link
-                  to={`/article/${encodeURIComponent(article.title)}`}
+                  to={`/article/${encodeURIComponent(article.id)}`}
                   className="btn-1    w-3/5  text-center    "
                 >
                   Read More
@@ -56,4 +55,3 @@ function ArticleSaved() {
   );
 }
 export default ArticleSaved;
-// <div className="text-white m-50 bg-black p-50">{Articles.length}</div>;

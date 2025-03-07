@@ -5,7 +5,6 @@ import { FetchArticles } from "./RTK/ArticlesSlice.js";
 import NotFound from "./components/NotFound.jsx";
 import Article from "./components/Article.jsx";
 import Aside from "./components/Aside.jsx";
-// import NotFound from "./components/NotFound.jsx";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -21,15 +20,15 @@ function HomePage() {
         {articles.length > 0 ? (
           <>
             <Article
-              key={articles[0].index}
+              key={articles[0].id}
               article={articles[0]}
               onSave={() => dispatch(addArticle(articles[0]))}
-              index={articles.index}
+              index={articles.id}
               isFeatured={true}
             />
-            {articles.slice(1).map((article, index) => (
+            {articles.slice(1).map((article) => (
               <Article
-                key={index}
+                key={article.id}
                 article={article}
                 onSave={() => dispatch(addArticle(article))}
               />

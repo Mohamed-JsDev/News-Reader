@@ -18,7 +18,7 @@ function Article({ article, onSave, isFeatured }) {
     >
       <ImageComponent
         className="rounded-2xl w-full"
-        src={article.urlToImage}
+        src={article.media_url}
         alt={article.title || "Article Image"}
       />
 
@@ -26,13 +26,13 @@ function Article({ article, onSave, isFeatured }) {
         {article.title || "No Title Available"}
       </h3>
       <span className="text-gray-500">
-        Published at: {new Date(article.publishedAt).toLocaleDateString()}
+        Published at: {new Date(article.pub_date).toLocaleDateString()}
       </span>
       <div className="mt-8 sm:flex-col">
         <button className="btn-1 w-3/5" onClick={goToArticle}>
           <Link>Read More</Link>
         </button>
-        <button className="btn-2 w-1/4" onClick={() => onSave(article.title)}>
+        <button className="btn-2 w-1/4" onClick={() => onSave(article.id)}>
           Save
         </button>
       </div>

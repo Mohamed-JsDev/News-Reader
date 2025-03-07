@@ -13,21 +13,19 @@ function Header() {
   const dispatch = useDispatch();
   const handelSearching = async (p) => {
     p.preventDefault();
+
     try {
-      const res = await fetch(
-        `https://newsapi.org/v2/everything?q=${word}&apiKey=219b2028a41f4abcbf966d17964490d4`
-      );
-
-      if (!res.ok) {
-        throw new Error("Network response was not ok");
-      }
-
+      const API_KEY = "gwmoIZWEHkvQo6vaCStx02ITvdCo_5tkKB07WQk4ZkI";
+      const BASE_URL = "https://api.newsdatahub.com/v1/news";
+      const headers = {
+        "X-Api-Key": API_KEY,
+      };
+      const res = await fetch(BASE_URL, { headers, params: { q: `${p}` } });
       const data = await res.json();
-      const articles = data.articles;
+      const articles = data.data;
       setResults(articles);
-
       setShowResults(articles.length > 0);
-      console.log(setResults);
+      console.log(results);
     } catch (error) {
       console.log(error);
     }
@@ -85,9 +83,9 @@ function Header() {
             </h2>
           </div>
           <div className=" w-screen  bg-black   text-white p-8  absolute  top-24 bottom-20 z-5 left-0 grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
-            {results.map((result, index) => (
+            {results.map((result) => (
               <Article
-                key={index}
+                key={result.id}
                 article={result}
                 onSave={() => dispatch(addArticle(result))}
                 isFeatured={false}
@@ -96,7 +94,7 @@ function Header() {
           </div>
         </div>
       ) : (
-        <div>لا توجد نتائج.</div>
+        <div>{word} not found!</div>
       )}
     </>
   );

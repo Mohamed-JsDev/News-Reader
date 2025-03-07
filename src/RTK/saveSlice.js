@@ -8,7 +8,7 @@ export const saveSlice = createSlice({
       state.push(action.payload);
     },
     removeArticle: (state, action) => {
-      return state.filter((article) => article.title !== action.payload.title);
+      return state.filter((article) => article.id !== action.payload.id);
     },
   },
 });
